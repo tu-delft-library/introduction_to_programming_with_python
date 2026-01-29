@@ -11,10 +11,6 @@ title: Readiness Quiz - Introduction to Programming with Python
 
 - If the test felt too hard, we recommend taking the [Introduction to Programming with Python](https://www.tudelft.nl/library/data-management/trainingen/trainingen-voor-onderzoekers-en/introduction-to-programming-with-python) at TU Delft
 
-- Alternatively, you can self-study the [Programming with Python Software Carpentry course](https://swcarpentry.github.io/python-novice-inflammation/)
-
-
-
 --- 
  
 <div class="iframe-wrapper">
