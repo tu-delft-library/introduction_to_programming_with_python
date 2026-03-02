@@ -6,7 +6,7 @@
 - ✅ Roll call + 🤝 Code of Conduct
 - 🖥 Did everyone:
     - install python
-    - install `carpentries` enviroment
+    - install `carpentries` environment
     - download the materials
 - 🙋 Getting help (🆘 red  ✅ green stickers)
 
@@ -14,7 +14,7 @@
 A short icebreaker from [resources document](https://tud365.sharepoint.com/:w:/r/sites/ResearchDataServices/Gedeelde%20documenten/Training/Research_Software_Training/lesson_plans/resources/resources.docx?d=waea671d7fc6a46d5b5c068fc19f41940&csf=1&web=1&e=f2QYgy)
 
 
-## Introduction to version control - 10'
+## Introduction to python - 10'
 - 🎦 introduction with [slides](https://tud365.sharepoint.com/:p:/r/sites/ResearchDataServices/Gedeelde%20documenten/Training/Research_Software_Training/lesson_plans/resources/Introduction%20to%20programming%20with%20Python.pptx?d=w0d581778c4b0479ab36e1e1706535b88&csf=1&web=1&e=gdimt4) 
 - Why python?
 - Why avoid generative AI during the workshop
@@ -25,7 +25,7 @@ A short icebreaker from [resources document](https://tud365.sharepoint.com/:w:/r
 - Open terminal:
     - Mac open Terminal
     - Windows open Miniforge prompt
-- Activate carpentries conda environment
+- Activate `carpentries` conda environment
 ```
 conda activate carpentries
 ```
@@ -40,7 +40,7 @@ cd ~/Desktop
 ```
 cd swc-python/data
 ```
-- Explain jupyter notebook will run in the current working directoy
+- Explain jupyter notebook will run in the current working directory
 - Launch jupyter notebook
 ```
 jupyter notebook
@@ -48,7 +48,7 @@ jupyter notebook
 
 
 - Start a new jupyter notebook using Python 3
-- Rename and save
+- Rename to `day_one` and save
 
 ## Python Fundamentals - 20'
 
@@ -353,9 +353,7 @@ print(np.mean(data, axis=1)) # mean inflammation for all patients at once
 
 ## Break - 15'
 
-## Visualizing Tabular Data
-
-### Visualizing - 20'
+## Visualizing Tabular Data - 20'
 - Use shortcut to import matplotlib 
 ```
 import matplotlib.pyplot as plt # another handy library using short-cut
@@ -377,7 +375,7 @@ plt.plot(np.min(data, axis=0))         # step function seems unlikely
     - Plot scaling
     - Drawing straight lines
 
-### Grouping plots - 15'
+## Grouping plots - 15'
 - `figure` creates a space (like a blank canvas) where to place our plots
 - `add_subplot` takes 3 parameters: rows, columns, which subplot
 - `set_ylabel` to name the axis
@@ -409,7 +407,7 @@ plt.savefig('inflammation.png')
     - Moving plots around
 
 ## Break - 15'
-### Analysing multiple files - 15'
+## Analysing multiple files - 15'
 - `glob` a library to get a list of all files in a directory
 
 ```
@@ -479,11 +477,19 @@ li = [1,2,3,4]
 
 li[0]
 li[2:4]
-for k in li:
-    print(k)
+
+li = [another_list, yet_another_list]
+
+li[1] = 5 # lists are mutable -> update value
+s[0] ='k' # strings are immutable -> items inside cannot be changed -> only fully replaced
+
+for variable in sequence:
+    print(variable)         # notice indentation
+
+len(li)                  # length of something that contains other values (eg. list)
 
 import numpy as np
-data = np.loadtxt(fname='inflammation-01.csv',delimiter=',')
+data = np.loadtxt(fname='inflammation-01.csv', delimiter=',')
 np.mean(data, axis=0)
 
 import matplotlib.pyplot as plt
@@ -492,7 +498,7 @@ plt.plot(np.mean(data, axis=0))
 plt.show()
 
 import glob
-sorted(glob.glob('inflammation*.csv'))
+glob.glob('inflammation*.csv')
 ```
 
 
@@ -503,19 +509,140 @@ sorted(glob.glob('inflammation*.csv'))
 ## Installation check, housekeeping - 15'
 - ✅ Roll call + 🤝 Code of Conduct
 - 🖥 Restart Jupyter notebook
+    - Restart Jupyter notebook
+    - Make a new notebook with Python 3 kernel
+    - Rename to `day_two` and save
 - 🙋 Getting help (🆘 red  ✅ green stickers)
 
 ## Icebreaker - 5'
 A short icebreaker from [resources document](https://tud365.sharepoint.com/:w:/r/sites/ResearchDataServices/Gedeelde%20documenten/Training/Research_Software_Training/lesson_plans/resources/resources.docx?d=waea671d7fc6a46d5b5c068fc19f41940&csf=1&web=1&e=f2QYgy)
 
 ## Recap from day one - 10'
+
 ```
+variables = 3 # variable to store values
+i = 10
+f = 10.3
+s = 'strings'
+
+s[3]
+s[:4]
+s[2:]
+s[-1]
+s[-2]
+
+li = [1,2,3,4]
+
+li[0]
+li[2:4]
+
+li = [another_list, yet_another_list]
+
+li[1] = 5 # lists are mutable -> update value
+s[0] ='k' # strings are immutable -> items inside cannot be changed -> only fully replaced
+
+for variable in sequence:
+    print(variable)         # notice indentation
+
+len(li)                  # length of something that contains other values (eg. list)
+
+import numpy as np
+data = np.loadtxt(fname='inflammation-01.csv', delimiter=',')
+np.mean(data, axis=0)
+
+import matplotlib.pyplot as plt
+plt.imshow(data)
+plt.plot(np.mean(data, axis=0))
+plt.show()
+
+import glob
+glob.glob('inflammation*.csv')
 ```
 
-## Making choices
-
-### Live coding - 20'
+## Making choices - 20'
+- Make a choice with `if`
 ```
+num = 37
+if num > 100:               # if statement is true -> executes code inside if body
+    print('greater')    
+else:                       # if statement is false -> execute code inside else body  
+    print('not greater')
+print('done')
+```
+- `else` is optional
+```
+num = 53
+print('before conditional...')
+if num > 100:                           # if statement false
+    print(num, 'is greater than 100')
+print('...after conditional')           # python skips if body and continues on this line
+```
+- chain multiple tests with `elif`
+```
+num = -3
+
+if num > 0:
+    print(num, 'is positive')
+elif num == 0:                      # test for equality uses double equal (==) vs single equal (=) means assign
+    print(num, 'is zero')
+else:
+    print(num, 'is negative')
+```
+
+- Comparing in Python. Explain comparison operators
+```
+5 == 5
+5!=3
+5 > 4
+5 >= 5
+5 < 7
+5 <= 5
+
+```
+- Combine test using `and` and `or`
+```
+if (1 > 0) and (-1 >= 0):
+    print('both parts are true')            
+else:
+    print('at least one part is false')
+if (1 < 0) or (1 >= 0):
+    print('at least one test is true')
+```
+
+- `True` AND `False` are special words in python called `booleans`
+```
+1<0
+-1<0
+```
+- Let's use this concepts to check our data
+    - if max inflammation day 0 and middle (day 20) are the same as the day number
+
+```
+import numpy as np
+data = np.loadtxt(fname='inflammation-01.csv', delimiter=',')
+
+max_inflammation_0 = np.max(data, axis=0)[0]
+max_inflammation_20 = np.max(data, axis=0)[20]
+
+if max_inflammation_0 == 0 and max_inflammation_20 == 20: # max equal to day number
+    print('Suspicious looking maxima!')
+elif np.sum(np.min(data, axis=0)) == 0:                   # min is zero (no inflammation)
+    print('Minima add up to zero!')
+else:
+    print('Seems OK!')                                    # all good
+```
+```
+data = np.loadtxt(fname='inflammation-03.csv', delimiter=',')
+
+max_inflammation_0 = np.max(data, axis=0)[0]
+max_inflammation_20 = np.max(data, axis=0)[20]
+
+if max_inflammation_0 == 0 and max_inflammation_20 == 20: # max equal to day number
+    print('Suspicious looking maxima!')
+elif np.sum(np.min(data, axis=0)) == 0:                   # min is zero (no inflammation)
+    print('Minima add up to zero!')
+else:
+    print('Seems OK!')                                    # all good
 ```
 
 ### 💪  Challenge - 15'
@@ -525,11 +652,27 @@ A short icebreaker from [resources document](https://tud365.sharepoint.com/:w:/r
     - Close Enough
     - Sorting a List Into Buckets
 
+## Break - 15'
+## Creating functions - 20'
+```
+```
+- Introduction to functions
+- Composing functions
+- Variable scope
+- Tidying up
 ### 💪  Challenge - 10'
 - TODO notebook
 - Exercise notebook link + instructions in collaborative document:
     - Combining Strings
     - Testing and Documenting Your Function
+
+## Creating functions - cont - 20'
+```
+```
+- Testing and Documenting
+- Defining defaults
+- Readable functions
+- Return vs print
 
 ### 💪  Challenge - 10'
 - TODO notebook
@@ -538,11 +681,16 @@ A short icebreaker from [resources document](https://tud365.sharepoint.com/:w:/r
     - Defining Defaults
     - Testing and Documenting Your Function
 
+## Break - 15'
+## Errors and exceptions - 10'
 ### 💪  Challenge - 10'
 - TODO notebook
 - Exercise notebook link + instructions in collaborative document:
     - Reading Error Messages
 
+## Errors and exceptions - cont - 15'
+```
+```
 ### 💪  Challenge - 15'
 - TODO notebook
 - Exercise notebook link + instructions in collaborative document:
@@ -550,17 +698,35 @@ A short icebreaker from [resources document](https://tud365.sharepoint.com/:w:/r
     - Identifying Variable Name Errors
     - Identifying Index Errors
 
+## Break - 60'
 
+## Defensive Programming - 15'
+```
+```
 
 ### 💪  Challenge - 10'
 - TODO notebook
 - Exercise notebook link + instructions in collaborative document:
     - Pre- and Post-Conditions
 
+## Defensive programming - cont - 20'
+```
+```
 ### 💪  Challenge - 10'
 - TODO notebook
 - Exercise notebook link + instructions in collaborative document:
     - Testing Assertions
+
+## Break - 15'
+## Debugging - 15'
+- 🎦 use [slides](https://tud365.sharepoint.com/:p:/r/sites/ResearchDataServices/Gedeelde%20documenten/Training/Research_Software_Training/lesson_plans/resources/Introduction%20to%20programming%20with%20Python.pptx?d=w0d581778c4b0479ab36e1e1706535b88&csf=1&web=1&e=gdimt4) 
+    - Know what it's supposed to do
+    - Make it fail every time
+    - Make it fail fast
+    - Change One Thing at a Time, For a Reason
+    - Keep Track of What You’ve Done (importance of version control)
+    - Be humble
+
 
 ### 💪  Challenge - 40'
 - TODO notebook
@@ -569,7 +735,7 @@ A short icebreaker from [resources document](https://tud365.sharepoint.com/:w:/r
     - Not Supposed to be the Same
     - TODO other debugging excersices (missing "", ], : )
 
-### 💪  Challenge - 40'
+## Putting it all together - 40'
 TODO a big practice exercise
 
 ## Key points - 10'
