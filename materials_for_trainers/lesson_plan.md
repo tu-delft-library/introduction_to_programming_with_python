@@ -48,7 +48,7 @@ jupyter notebook
 
 
 - Start a new jupyter notebook using Python 3
-- Rename to `day_one` and save
+- Rename to `one` and save (not `day_one` to avoid confusion with directory name `data`)
 
 ## Python Fundamentals - 20'
 
@@ -96,10 +96,9 @@ help(print)         # shows docstring with parameters and usage
 ```
 
 ### 💪  Challenge - 10'
-- TODO notebook
-- Exercise notebook link + instructions in collaborative document
-    - Check your understanding
-    - Sorting out references
+- Open `exercises_day_one` notebook from jupyter home
+    - 1 ❓ Check your understanding
+    - 2 ❓ Sorting out references
 
 ## Break - 15'
 
@@ -171,10 +170,8 @@ chromo[-1]
 
 ```
 ### 💪  Challenge - 15'
-- TODO notebook
-- Exercise notebook link + instructions in collaborative document:
-    - Slicing from the end
-    - Non-continuous slices
+    - 3 ❓ Slicing from the end
+    - 4 ❓ Non-continuous slices
 
 ## More Lists - 15'
 - 🎦 Use [slides](https://tud365.sharepoint.com/:p:/r/sites/ResearchDataServices/Gedeelde%20documenten/Training/Research_Software_Training/lesson_plans/resources/Introduction%20to%20programming%20with%20Python.pptx?d=w0d581778c4b0479ab36e1e1706535b88&csf=1&web=1&e=gdimt4) to explain `nested lists`
@@ -204,9 +201,7 @@ print(till_summer)
 
 
 ### 💪  Challenge - 10'
-- TODO notebook
-- Exercise notebook link + instructions in collaborative document:
-    - Overloading
+- 5 ❓ Overloading
 
 
 ## Loops - 20'
@@ -262,12 +257,11 @@ print(len(odds))
 ```
 
 ### 💪  Challenge - 30'
-- TODO notebook
-- Exercise notebook link + instructions in collaborative document:
-    - From 1 to N
-    - Understanding the loops
-    - Summing a list
-    - Computing the Value of a polynomial
+
+- 6 ❓ From 1 to N
+- 7 ❓ Understanding the loops
+- 8 ❓ Summing a list
+- 9 ❓ Computing the Value of a polynomial
 
 ## Break - 60'
 
@@ -279,20 +273,22 @@ print(len(odds))
 - Use shortcut to import numpy 
 ```
 import numpy as np          # numerical python. Good for matrices operations
-np.loadtxt(fname='inflammation-01.csv', delimiter=','). # explain function call, . notation and parameters
+np.loadtxt(fname='data/inflammation-01.csv') # without delimiter to explain delimiter
+
+data = np.loadtxt(fname='data/inflammation-01.csv', delimiter=','). # explain function call, . notation and parameters
 type(data)              # n-dimensional array
 data.shape              # array shape
 ```
--  📉 Draw on board 60 rows -> patients and 40 columns -> days
+- 📉 Draw on board 60 rows -> patients and 40 columns -> days
+- 📉 Explain on the board the Python indexing [row, columns]
+    - Explain zero based indexing -> offset from the first value in the array
+- 🎦 use picture in [slides](https://tud365.sharepoint.com/:p:/r/sites/ResearchDataServices/Gedeelde%20documenten/Training/Research_Software_Training/lesson_plans/resources/Introduction%20to%20programming%20with%20Python.pptx?d=w0d581778c4b0479ab36e1e1706535b88&csf=1&web=1&e=gdimt4) 
 
 ```
 print('first value in data:', data[0, 0]) # single number from array we use an index
 print('middle value in data:', data[29, 19]) #row 30, column 20.
 
 ```
-- 📉 Explain on the board the Python indexing [row, columns]
-    - Explain zero based indexing -> offset from the first value in the array
-- 🎦 use picture in [slides](https://tud365.sharepoint.com/:p:/r/sites/ResearchDataServices/Gedeelde%20documenten/Training/Research_Software_Training/lesson_plans/resources/Introduction%20to%20programming%20with%20Python.pptx?d=w0d581778c4b0479ab36e1e1706535b88&csf=1&web=1&e=gdimt4) 
 
 
 ### Slicing data - 10'
@@ -307,9 +303,7 @@ print(data[:3, 36:])            # no lower bound starts at zero, no upper bound 
 ```
 
 ### 💪  Challenge - 10'
-- TODO notebook
-- Exercise notebook link + instructions in collaborative document:
-    - Slicing strings
+- 10 ❓ Slicing strings
 
 
 ### Analyzing data - 10'
@@ -347,9 +341,7 @@ print(np.mean(data, axis=1)) # mean inflammation for all patients at once
 ```
 
 ### 💪  Challenge - 10'
-- TODO notebook
-- Exercise notebook link + instructions in collaborative document
-    - Change in inflammation
+- 11 ❓ Change in inflammation
 
 ## Break - 15'
 
@@ -370,10 +362,8 @@ plt.plot(np.min(data, axis=0))         # step function seems unlikely
 - Max and min look suspicious. This requires further investigation 😶
 
 ### 💪  Challenge - 10'
-- TODO notebook
-- Exercise notebook link + instructions in collaborative document:
-    - Plot scaling
-    - Drawing straight lines
+- 12 ❓ Plot scaling
+- 13 ❓ Drawing straight lines
 
 ## Grouping plots - 15'
 - `figure` creates a space (like a blank canvas) where to place our plots
@@ -401,10 +391,8 @@ plt.savefig('inflammation.png')
 ```
 
 ### 💪  Challenge - 10'
-- TODO notebook
-- Exercise notebook link + instructions in collaborative document:
-    - Make your own plot
-    - Moving plots around
+- 14 ❓ Make your own plot
+- 15 ❓ Moving plots around
 
 ## Break - 15'
 ## Analysing multiple files - 15'
@@ -419,13 +407,13 @@ import glob
 import numpy as numpy
 import matplotlib.pyplot as plt
 
-filenames = sorted(glob.glob('inflammation*.csv'))  
+filenames = sorted(glob.glob('data/inflammation*.csv'))  
 for filename in filenames[0:3]:
     print(filename)        
 
     data = numpy.loadtxt(fname=filename, delimiter=',')
 
-    fig = matplotlib.pyplot.figure(figsize=(10.0, 3.0)) # one figure per file
+    fig = plt.figure(figsize=(10.0, 3.0)) # one figure per file
 
     axes1 = fig.add_subplot(1, 3, 1)                    # 3 plots per file
     axes2 = fig.add_subplot(1, 3, 2)
@@ -440,21 +428,20 @@ for filename in filenames[0:3]:
     axes3.set_ylabel('min')
     axes3.plot(numpy.amin(data, axis=0)) # along rows = patients -> values per day
 
-    matplotlib.pyplot.show()            # so that it renders after printing the filename
+    plt.show()            # so that it renders after printing the filename
 ```
 - File 1 and 2 -> similar patterns
 - File 3 -> suspicious minima
 
 ```
-data = np.loadtxt(fname='inflammation-03.csv',delimiter=',')
+data = np.loadtxt(fname='data/inflammation-03.csv',delimiter=',')
 plt.imshow(data)
 ```
 - Notice zero values spread across patients and days. ❗ Potential problem with data collection❗
 ### 💪  Challenge - 20'
-- TODO notebook
-- Exercise notebook link + instructions in collaborative document:
-    - Plotting Differences
-    - Generate Composite Statistics
+
+- 16 ❓ Plotting Differences
+- 17 ❓ Generate Composite Statistics
 
 ## Forgive the imaginary Dr. Maverick -5'
 🎦 Use [slides](https://tud365.sharepoint.com/:p:/r/sites/ResearchDataServices/Gedeelde%20documenten/Training/Research_Software_Training/lesson_plans/resources/Introduction%20to%20programming%20with%20Python.pptx?d=w0d581778c4b0479ab36e1e1706535b88&csf=1&web=1&e=gdimt4) 
@@ -489,7 +476,7 @@ for variable in sequence:
 len(li)                  # length of something that contains other values (eg. list)
 
 import numpy as np
-data = np.loadtxt(fname='inflammation-01.csv', delimiter=',')
+data = np.loadtxt(fname='data/inflammation-01.csv', delimiter=',')
 np.mean(data, axis=0)
 
 import matplotlib.pyplot as plt
@@ -511,7 +498,7 @@ glob.glob('inflammation*.csv')
 - 🖥 Restart Jupyter notebook
     - Restart Jupyter notebook
     - Make a new notebook with Python 3 kernel
-    - Rename to `day_two` and save
+    - Rename to `two` and save
 - 🙋 Getting help (🆘 red  ✅ green stickers)
 
 ## Icebreaker - 5'
@@ -547,7 +534,7 @@ for variable in sequence:
 len(li)                  # length of something that contains other values (eg. list)
 
 import numpy as np
-data = np.loadtxt(fname='inflammation-01.csv', delimiter=',')
+data = np.loadtxt(fname='data/inflammation-01.csv', delimiter=',')
 np.mean(data, axis=0)
 
 import matplotlib.pyplot as plt
@@ -619,7 +606,7 @@ if (1 < 0) or (1 >= 0):
 
 ```
 import numpy as np
-data = np.loadtxt(fname='inflammation-01.csv', delimiter=',')
+data = np.loadtxt(fname='data/inflammation-01.csv', delimiter=',')
 
 max_inflammation_0 = np.max(data, axis=0)[0]
 max_inflammation_20 = np.max(data, axis=0)[20]
@@ -632,7 +619,7 @@ else:
     print('Seems OK!')                                    # all good
 ```
 ```
-data = np.loadtxt(fname='inflammation-03.csv', delimiter=',')
+data = np.loadtxt(fname='data/inflammation-03.csv', delimiter=',')
 
 max_inflammation_0 = np.max(data, axis=0)[0]
 max_inflammation_20 = np.max(data, axis=0)[20]
@@ -646,11 +633,10 @@ else:
 ```
 
 ### 💪  Challenge - 15'
-- TODO notebook
-- Exercise notebook link + instructions in collaborative document:
-    - What Is Truth?
-    - Close Enough
-    - Sorting a List Into Buckets
+- Open `exercises_day_two` notebook from jupyter home
+    - 1 ❓ What Is Truth?
+    - 2 ❓ Close Enough
+    - 3 ❓ Sorting a List Into Buckets
 
 ## Break - 15'
 ## Creating functions - 20'
@@ -661,10 +647,8 @@ else:
 - Variable scope
 - Tidying up
 ### 💪  Challenge - 10'
-- TODO notebook
-- Exercise notebook link + instructions in collaborative document:
-    - Combining Strings
-    - Testing and Documenting Your Function
+- 4 ❓ Combining Strings
+- 5 ❓ Testing and Documenting Your Function
 
 ## Creating functions - cont - 20'
 ```
@@ -675,28 +659,22 @@ else:
 - Return vs print
 
 ### 💪  Challenge - 10'
-- TODO notebook
-- Exercise notebook link + instructions in collaborative document:
-    - Rescaling an Array
-    - Defining Defaults
-    - Testing and Documenting Your Function
+- 6 ❓ Rescaling an Array
+- 7 ❓ Defining Defaults
+- 8 ❓ Testing and Documenting Your Function
 
 ## Break - 15'
 ## Errors and exceptions - 10'
 ### 💪  Challenge - 10'
-- TODO notebook
-- Exercise notebook link + instructions in collaborative document:
-    - Reading Error Messages
+- 9 ❓ Reading Error Messages
 
 ## Errors and exceptions - cont - 15'
 ```
 ```
 ### 💪  Challenge - 15'
-- TODO notebook
-- Exercise notebook link + instructions in collaborative document:
-    - Identifying Syntax Errors
-    - Identifying Variable Name Errors
-    - Identifying Index Errors
+- 10 ❓ Identifying Syntax Errors
+- 11 ❓ Identifying Variable Name Errors
+- 12 ❓ Identifying Index Errors
 
 ## Break - 60'
 
@@ -705,17 +683,13 @@ else:
 ```
 
 ### 💪  Challenge - 10'
-- TODO notebook
-- Exercise notebook link + instructions in collaborative document:
-    - Pre- and Post-Conditions
+- 13 ❓ Pre- and Post-Conditions
 
 ## Defensive programming - cont - 20'
 ```
 ```
 ### 💪  Challenge - 10'
-- TODO notebook
-- Exercise notebook link + instructions in collaborative document:
-    - Testing Assertions
+- 14 ❓ Testing Assertions
 
 ## Break - 15'
 ## Debugging - 15'
@@ -729,14 +703,12 @@ else:
 
 
 ### 💪  Challenge - 40'
-- TODO notebook
-- Exercise notebook link + instructions in collaborative document:
-    - Debug With a Neighbor
-    - Not Supposed to be the Same
-    - TODO other debugging excersices (missing "", ], : )
+- 15 ❓ Debug With a Neighbor
+- 16 ❓ Not Supposed to be the Same
+- 17 ❓ TODO other debugging excersices (missing "", ], : )
 
 ## Putting it all together - 40'
-TODO a big practice exercise
+- 18 ❓ Putting it all together
 
 ## Key points - 10'
 ```
