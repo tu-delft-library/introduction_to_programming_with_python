@@ -345,7 +345,7 @@ print(np.mean(data, axis=1)) # mean inflammation for all patients at once
 
 ## Break - 15'
 
-## Visualizing Tabular Data - 20'
+## Visualizing Tabular Data - 15'
 - Use shortcut to import matplotlib 
 ```
 import matplotlib.pyplot as plt # another handy library using short-cut
@@ -360,10 +360,6 @@ plt.plot(np.max(data, axis=0))         # linear seems unlikely
 plt.plot(np.min(data, axis=0))         # step function seems unlikely
 ```
 - Max and min look suspicious. This requires further investigation 😶
-
-### 💪  Challenge - 10'
-- 12 ❓ Plot scaling
-- 13 ❓ Drawing straight lines
 
 ## Grouping plots - 15'
 - `figure` creates a space (like a blank canvas) where to place our plots
@@ -390,7 +386,9 @@ plt.savefig('inflammation.png')
 
 ```
 
-### 💪  Challenge - 10'
+### 💪  Challenge - 20'
+- 12 ❓ Plot scaling
+- 13 ❓ Drawing straight lines
 - 14 ❓ Make your own plot
 - 15 ❓ Moving plots around
 
