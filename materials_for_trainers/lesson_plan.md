@@ -54,7 +54,7 @@ jupyter notebook
 
 
 ### Variables
-```
+```python
 3 + 5 * 4               # python as calculator 
 weight_kg = 60          # assign value to a variable with =
 weight_kg               # python recalls value assigned to variable
@@ -69,7 +69,7 @@ Three most common types:
 * integer numbers
 * floating point numbers
 * strings
-```
+```python
 type(weight_kg)             # integer
 weight_kg = 60.3            # add a floating point decimal
 weight_kg                   # display new value
@@ -78,20 +78,20 @@ patient_id = '001'          # single quotes to create a str
 type(patient_id)            # function type shows the type of variable patient_id
 ```
 ### Using variables
-```
+```python
 weight_lb = 2.2 * weight_kg             # make calculations
 weight_lb                               # display new value
 patient_id = 'inflam_' + patient_id     # add a prefix to string -> + concatenates
 patient_id                              # display new value
 ```
 ### Built-in functions
-```
+```python
 print(weight_lb)                # display info in screen
 print(patient_id)               # follow function name by parenthesis
 print(patient_id, 'weight in kilograms:', weight_kg) # multiple things at once
 ```
 ### Getting help
-```
+```python
 help(print)         # shows docstring with parameters and usage
 ```
 
@@ -105,7 +105,7 @@ help(print)         # shows docstring with parameters and usage
 
 ## Lists - 20'
 `lists` ordered collection of elements
-```
+```python
 odds = [1, 3, 5, 7]                 # use square brackets separate with commas
 print('odds are:', odds)
 
@@ -127,12 +127,12 @@ name[0] = 'd'                # str can not be corrected the same way -> immutabl
 - `immutable` types can only be updated by replacing old value with a new one
 - `mutable` modify individual elements using indices
 `lists` can contain elements of different types
-```
+```python
 sample_ages = [10, 12.5, 'Unknown']
 ```
 
 `lists` can be modified
-```
+```python
 odds.append(11)             # add element at the end
 print('odds after adding a value:', odds)
 
@@ -143,7 +143,7 @@ odds.reserve()
 print('odds after reversing:', odds)
 ```
 Careful when modifying `lists` in-place. Variables pointing to the same list stay `connected`. Both variables are pointing to the same list.
-```
+```python
 odds = [3, 5, 7]
 primes = odds
 primes.append(2)
@@ -151,7 +151,7 @@ print('primes:', primes)
 print('odds:', odds)
 ```
 For a simple copy, better to use the `list()` command
-```
+```python
 odds = [3, 5, 7]
 primes = list(odds)
 primes.append(2)
@@ -159,7 +159,7 @@ print('primes:', primes)
 print('odds:', odds)
 ```
 A note about slicing: similarly to a numpy array, `lists` and `strings` can be sliced
-```
+```python
 name = 'dolores santos'
 name[0:7]                                   # how it works in a string
 
@@ -174,9 +174,9 @@ chromo[-1]
     - 4 ❓ Non-continuous slices
 
 ## More Lists - 15'
-- 🎦 Use [slides](https://tud365.sharepoint.com/:p:/r/sites/ResearchDataServices/Gedeelde%20documenten/Training/Research_Software_Training/lesson_plans/resources/Introduction%20to%20programming%20with%20Python.pptx?d=w0d581778c4b0479ab36e1e1706535b88&csf=1&web=1&e=gdimt4) to explain `nested lists`
+🎦 Use [slides](https://tud365.sharepoint.com/:p:/r/sites/ResearchDataServices/Gedeelde%20documenten/Training/Research_Software_Training/lesson_plans/resources/Introduction%20to%20programming%20with%20Python.pptx?d=w0d581778c4b0479ab36e1e1706535b88&csf=1&web=1&e=gdimt4) to explain `nested lists`
 
-```
+```python
 veg = [['lettuce', 'lettuce', 'peppers', 'zucchini'],
      ['lettuce', 'lettuce', 'peppers', 'zucchini'],
      ['lettuce', 'cilantro', 'peppers', 'zucchini']] # a list that contains other lists
@@ -185,8 +185,8 @@ print(veg[0]) # row at the top of the shelf
 print(veg[0][0]) # basket top left corner
 ```
 
-- Omitting first/last index
-```
+Omitting first/last index
+```python
 date = 'Monday 4 January 2016'
 day = date[0:6]
 print(day)
@@ -205,52 +205,53 @@ print(till_summer)
 
 
 ## Loops - 20'
-- why `loops` -> repeated actions on long lists
-```
+why `loops` -> repeated actions on long lists
+```python
 odds = [1, 3, 5, 7]         # list with ordered elements
 print(odds[0])              # access via index
 print(odds[1])
 print(odds[2])
 print(odds[3])              # if list is long this becomes very tedious
 ```
-- Enter `loops` -> a structure that allows to repeat an operation once for each element in a sequence
-```
+Enter `loops` -> a structure that allows to repeat an operation once for each element in a sequence
+```python
 for number in odds:        # The : marks the start of the loop
     print(number)          # indention defines the block of the code that will be repeated
 odds = [1,3,5,7,9,11,13,15,17,19,21]    # a longer list
 for number in odds:         # runs the loop and it works again
     print(number)
 ```
-- Loop variable can have any name. Recommended to use descriptive names
-```
+Loop variable can have any name. Recommended to use descriptive names
+```python
 for banana in odds:
     print(banana)
 for odd in odds:        # another standard -> singular of the list name
     print(odd)
 ```
-- Another example.
-```
+Another example.
+```python
 length = 0
 names = ['Curie', 'Darwin', 'Turing']
 for value in names:
     length = length + 1            
 print('There are', length, 'names in the list.')
 ```
-- Analyse step by step. Notice when the variables are modified.
-    - run 1 -> length = 0, value = 'Curie', +1, length = 1
-    - run 2 -> length = 1, value = 'Darwin', +1, length = 2
-    - run 3 -> length = 2, value = 'Turing', +1 , length = 3
-- Notice the variable still exists when the look is over
+Analyse step by step. Notice when the variables are modified.
+- run 1 -> length = 0, value = 'Curie', +1, length = 1
+- run 2 -> length = 1, value = 'Darwin', +1, length = 2
+- run 3 -> length = 2, value = 'Turing', +1 , length = 3
 
-```
+Notice the variable still exists when the loop is over
+
+```python
 name = 'Rosalind'
 print(name)
 for name in ['Curie', 'Darwin', 'Turing']:
     print(name)
 print('after the loop, name is', name)
 ```
-- `len` is a built-in function
-```
+`len` is a built-in function
+```python
 print(len([1,2,3,4,5]))
 print(len(names))
 print(len(odds))
@@ -270,8 +271,9 @@ print(len(odds))
 ### Loading data - 10'
 - Importing a library is like getting a piece of lab equipment
 - Only import what you need so it doesn't get messy
-- Use shortcut to import numpy 
-```
+- Use shortcut to `import numpy`
+
+```python
 import numpy as np          # numerical python. Good for matrices operations
 np.loadtxt(fname='data/inflammation-01.csv') # without delimiter to explain delimiter
 
@@ -284,7 +286,7 @@ data.shape              # array shape
     - Explain zero based indexing -> offset from the first value in the array
 - 🎦 use picture in [slides](https://tud365.sharepoint.com/:p:/r/sites/ResearchDataServices/Gedeelde%20documenten/Training/Research_Software_Training/lesson_plans/resources/Introduction%20to%20programming%20with%20Python.pptx?d=w0d581778c4b0479ab36e1e1706535b88&csf=1&web=1&e=gdimt4) 
 
-```
+```python
 print('first value in data:', data[0, 0]) # single number from array we use an index
 print('middle value in data:', data[29, 19]) #row 30, column 20.
 
@@ -292,12 +294,12 @@ print('middle value in data:', data[29, 19]) #row 30, column 20.
 
 
 ### Slicing data - 10'
-- Reiterate the use of square brackets
-```
+Reiterate the use of square brackets
+```python
 print(data[0:4, 0:10])          # select a section using :
 ```
-- 0:4-> "start at index 0 and go up to, not including, index 4"
-```
+`0:4`-> "start at index 0 and go up to, not including, index 4"
+```python
 print(data[5:10, 0:10])         # start the slice where ever you want
 print(data[:3, 36:])            # no lower bound starts at zero, no upper bound goes to end 
 ```
@@ -307,8 +309,8 @@ print(data[:3, 36:])            # no lower bound starts at zero, no upper bound 
 
 
 ### Analyzing data - 10'
-- Default functions from `np`
-```
+Default functions from `np`
+```python
 print(np.mean(data))         # mean is a function. data is the argument
 maxval = np.max(data)
 minval = np.min(data)
@@ -318,21 +320,21 @@ print('maximum value', maxval)
 print('minimum value', minval)
 print('standard deviation',stdval)
 ```
-- Demo `numpy`. **TAB** to visualize the functions available from the library
+Demo `numpy`. **TAB** to visualize the functions available from the library
 
 ### Numpy axes - 10'
-```
+```python
 patient_0 = data[0, :] # 0 on the first axis (rows), everything on the second (columns)
 print('maximum inflammation for patient 0:', np.amax(patient_0))
 print('maximum inflammation for patient 2:', np.amax(data[2, :])) # no need to store in variable
 
 ```
-- 🎦  Explain np axes with [slides](https://tud365.sharepoint.com/:p:/r/sites/ResearchDataServices/Gedeelde%20documenten/Training/Research_Software_Training/lesson_plans/resources/Introduction%20to%20programming%20with%20Python.pptx?d=w0d581778c4b0479ab36e1e1706535b88&csf=1&web=1&e=gdimt4) 
+🎦  Explain np axes with [slides](https://tud365.sharepoint.com/:p:/r/sites/ResearchDataServices/Gedeelde%20documenten/Training/Research_Software_Training/lesson_plans/resources/Introduction%20to%20programming%20with%20Python.pptx?d=w0d581778c4b0479ab36e1e1706535b88&csf=1&web=1&e=gdimt4) 
 
-    - axis 0 -> walks along rows
-    - axis 1 -> walks along columns
+- axis 0 -> walks along rows
+- axis 1 -> walks along columns
 
-```
+```python
 print(np.max(data, axis=1)) # the same for all patients at once
 print(np.max(data, axis=1).shape) # 60 patients
 print(np.max(data, axis=0)) # the same for all days at once
@@ -346,27 +348,28 @@ print(np.mean(data, axis=1)) # mean inflammation for all patients at once
 ## Break - 15'
 
 ## Visualizing Tabular Data - 15'
-- Use shortcut to import matplotlib 
-```
+Use shortcut to `import matplotlib`
+```python
 import matplotlib.pyplot as plt # another handy library using short-cut
 image = plt.imshow(data) # heatmap: low values are blue, high values are yellow     
 ```
-- Quickly observe tendency of inflammation flare-ups around day 20 🔥
-- Patients take medication and inflammation drops to zero in about 3 weeks 👍
+Quickly observe tendency of inflammation flare-ups around day 20 🔥
 
-```
+Patients take medication and inflammation drops to zero in about 3 weeks 👍
+
+```python
 plt.plot(np.mean(data, axis=0))       # avg inflammation per day. Reasonable rise and fall plot
 plt.plot(np.max(data, axis=0))         # linear seems unlikely
 plt.plot(np.min(data, axis=0))         # step function seems unlikely
 ```
-- Max and min look suspicious. This requires further investigation 😶
+Max and min look suspicious. This requires further investigation 😶
 
 ## Grouping plots - 15'
 - `figure` creates a space (like a blank canvas) where to place our plots
 - `add_subplot` takes 3 parameters: rows, columns, which subplot
 - `set_ylabel` to name the axis
 - `savefig` stores plot in a file (can be png, svg, pdf, jpeg)
-```
+```python
 fig = plt.figure(figsize=(10.0, 3.0))       # create a blank canvas and set size
 
 axes1 = fig.add_subplot(1, 3, 1)            # 1 row, 3 columns, plot 1
@@ -394,13 +397,13 @@ plt.savefig('inflammation.png')
 
 ## Break - 15'
 ## Analysing multiple files - 15'
-- `glob` a library to get a list of all files in a directory
+`glob` a library to get a list of all files in a directory
 
-```
+```python
 print(glob.glob('inflammation*.csv')) # wildcard * matches zero or more characters
 # arbitrary order
 ```
-```
+```python
 import glob             
 import numpy as numpy
 import matplotlib.pyplot as plt
@@ -431,11 +434,11 @@ for filename in filenames[0:3]:
 - File 1 and 2 -> similar patterns
 - File 3 -> suspicious minima
 
-```
+```python
 data = np.loadtxt(fname='data/inflammation-03.csv',delimiter=',')
 plt.imshow(data)
 ```
-- Notice zero values spread across patients and days. ❗ Potential problem with data collection❗
+Notice zero values spread across patients and days. Potential problem with data collection❗
 ### 💪  Challenge - 20'
 
 - 16 ❓ Plotting Differences
@@ -446,7 +449,7 @@ plt.imshow(data)
 
 
 ## Key points - 10'
-```
+```python
 variables = 3 # variable to store values
 i = 10
 f = 10.3
@@ -504,7 +507,7 @@ A short icebreaker from [resources document](https://tud365.sharepoint.com/:w:/r
 
 ## Recap from day one - 10'
 
-```
+```python
 variables = 3 # variable to store values
 i = 10
 f = 10.3
@@ -545,8 +548,8 @@ glob.glob('data/inflammation*.csv')
 ```
 
 ## Making choices - 20'
-- Make a choice with `if`
-```
+Make a choice with `if`
+```python
 num = 37
 if num > 100:               # if statement is true -> executes code inside if body
     print('greater')    
@@ -554,16 +557,16 @@ else:                       # if statement is false -> execute code inside else 
     print('not greater')
 print('done')
 ```
-- `else` is optional
-```
+`else` is optional
+```python
 num = 53
 print('before conditional...')
 if num > 100:                           # if statement false
     print(num, 'is greater than 100')
 print('...after conditional')           # python skips if body and continues on this line
 ```
-- chain multiple tests with `elif`
-```
+chain multiple tests with `elif`
+```python
 num = -3
 
 if num > 0:
@@ -574,8 +577,8 @@ else:
     print(num, 'is negative')
 ```
 
-- Comparing in Python. Explain comparison operators
-```
+comparing in Python: explain comparison operators
+```python
 5 == 5
 5!=3
 5 > 4
@@ -584,8 +587,8 @@ else:
 5 <= 5
 
 ```
-- Combine test using `and` and `or`
-```
+Combine test using `and` and `or`
+```python
 if (1 > 0) and (-1 >= 0):
     print('both parts are true')            
 else:
@@ -594,15 +597,15 @@ if (1 < 0) or (1 >= 0):
     print('at least one test is true')
 ```
 
-- `True` AND `False` are special words in python called `booleans`
-```
+`True` AND `False` are special words in python called `booleans`
+```python
 1<0
 -1<0
 ```
-- Let's use this concepts to check our data
-    - if max inflammation day 0 and middle (day 20) are the same as the day number
+Let's use this concepts to check our data
+- if max inflammation day 0 and middle (day 20) are the same as the day number
 
-```
+```python
 import numpy as np
 data = np.loadtxt(fname='data/inflammation-01.csv', delimiter=',')
 
@@ -616,7 +619,7 @@ elif np.sum(np.min(data, axis=0)) == 0:                   # min is zero (no infl
 else:
     print('Seems OK!')                                    # all good
 ```
-```
+```python
 data = np.loadtxt(fname='data/inflammation-03.csv', delimiter=',')
 
 max_inflammation_0 = np.max(data, axis=0)[0]
@@ -638,18 +641,71 @@ else:
 
 ## Break - 15'
 ## Creating functions - 20'
+- use python for calculations using variables
+```python
+fahrenheit_val = 99
+celsius_val = ((fahrenheit_val - 32) * (5/9)) # convert temperature F to C
+
+fahrenheit_val2 = 43                        # copy the line and rename the variables
+celsius_val2 = ((fahrenheit_val2 - 32) * (5/9))
+
 ```
+if repeat for many variables -> long, clumsy and ugly :)
+
+short way to reuse code -> `function`
+```python
+def explicit_fahr_to_celsius(temp):
+    # Assign the converted value to a variable
+    converted = ((temp - 32) * (5/9))
+    # Return the value of the new variable
+    return converted
+    
+def fahr_to_celsius(temp):
+    # Return converted value more efficiently using the return
+    # function without creating a new variable. This code does
+    # the same thing as the previous function but it is more explicit
+    # in explaining how the return command works.
+    return ((temp - 32) * (5/9))
 ```
-- Introduction to functions
-- Composing functions
-- Variable scope
-- Tidying up
+- `def` function definition
+- `fahr_to_celsius` function name
+- `(temp)` parenthesized list of parameter
+- `body` defined by indention (same as `loops`)
+- `return` ends body followed by return value
+
+```python
+fahr_to_celsius(32)     # 32 assigned to `temp`
+                        # returns the converted valued
+print('freezing point of water:', fahr_to_celsius(32), 'C')
+print('boiling point of water:', fahr_to_celsius(212), 'C')
+```
+Another function to convert C to K
+```python
+def celsius_to_kelvin(temp_c):
+    return temp_c + 273.15
+
+print('freezing point of water in Kelvin:', celsius_to_kelvin(0.))
+```
+Call a function inside a function -> composing functions
+```python
+# compose functions
+def fahr_to_kelvin(temp_f):
+    temp_c = fahr_to_celsius(temp_f)
+    temp_k = celsius_to_kelvin(temp_c)
+    return temp_k
+
+print('boiling point of water in Kelvin:', fahr_to_kelvin(212.0))
+
+```
+This is how large programs are built
+
 ### 💪  Challenge - 10'
 - 4 ❓ Combining Strings
 - 5 ❓ Selecting Characters From Strings
 
 ## Creating functions - cont - 20'
 ```
+
 ```
 - Testing and Documenting
 - Defining defaults
@@ -703,7 +759,7 @@ else:
 ### 💪  Challenge - 40'
 - 15 ❓ Minimum Failure
 - 16 ❓ Not Supposed to be the Same
-- 17 ❓ TODO other debugging excersices (missing "", ], : )
+- 17 ❓ TODO other debugging exercises (missing "", ], : )
 
 ## Putting it all together - 40'
 - 18 ❓ Putting it all together
