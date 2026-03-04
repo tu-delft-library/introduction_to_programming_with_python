@@ -1,4 +1,17 @@
-# Introduction to Programming with Python
-Ready to make your research more reproducible and efficient? This hands-on course introduces programming in Python for researchers with no prior coding experience—just curiosity and a willingness to overcome the fear of programming.  
+# Introduction to Programming with Python - Learner materials
 
-You will learn the fundamental principles of programming and how to apply them to real research workflows. The course focuses on building practical skills for organizing data, writing clear and reusable analysis scripts, and creating transparent, reproducible workflows. By the end, you will be able to combine code, results, and documentation in an integrated environment, making your research easier to share and maintain. 
+[![CC BY 4.0][cc-by-shield]][cc-by]
+
+Collection of learner materials for the Introduction to Programming with Python course. These materials are adaptations from the lessons provided by the [Software Carpentry](https://software-carpentry.org/lessons/).
+
+
+## License
+
+This work is licensed under a
+[Creative Commons Attribution 4.0 International License][cc-by].
+
+[![CC BY 4.0][cc-by-image]][cc-by]
+
+[cc-by]: http://creativecommons.org/licenses/by/4.0/
+[cc-by-image]: https://i.creativecommons.org/l/by/4.0/88x31.png
+[cc-by-shield]: https://img.shields.io/badge/License-CC%20BY%204.0-lightgrey.svg
