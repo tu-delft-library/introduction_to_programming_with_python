@@ -759,7 +759,7 @@ This is how large programs are built
 ### 💪  Challenge - 40'
 - 15 ❓ Minimum Failure
 - 16 ❓ Not Supposed to be the Same
-- 17 ❓ TODO other debugging exercises (missing "", ], : )
+- 17 ❓ Common code errors
 
 ## Putting it all together - 40'
 - 18 ❓ Putting it all together
