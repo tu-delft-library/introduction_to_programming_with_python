@@ -483,7 +483,7 @@ plt.plot(np.mean(data, axis=0))
 plt.show()
 
 import glob
-glob.glob('inflammation*.csv')
+glob.glob('data/inflammation*.csv')
 ```
 
 
@@ -541,7 +541,7 @@ plt.plot(np.mean(data, axis=0))
 plt.show()
 
 import glob
-glob.glob('inflammation*.csv')
+glob.glob('data/inflammation*.csv')
 ```
 
 ## Making choices - 20'
@@ -646,7 +646,7 @@ else:
 - Tidying up
 ### 💪  Challenge - 10'
 - 4 ❓ Combining Strings
-- 5 ❓ Testing and Documenting Your Function
+- 5 ❓ Selecting Characters From Strings
 
 ## Creating functions - cont - 20'
 ```
@@ -701,7 +701,7 @@ else:
 
 
 ### 💪  Challenge - 40'
-- 15 ❓ Debug With a Neighbor
+- 15 ❓ Minimum Failure
 - 16 ❓ Not Supposed to be the Same
 - 17 ❓ TODO other debugging excersices (missing "", ], : )
 
