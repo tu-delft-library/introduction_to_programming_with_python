@@ -1,8 +1,8 @@
 # 🌞 DAY 1 🌞
-## Land - 10'
+## 9:00 - Land - 10' - Cata
 ☕ Coffee/tea 🫖
 
-## Installation check, housekeeping - 15'
+## 9:10 - Housekeeping - 15' - CATA
 - ✅ Roll call + 🤝 Code of Conduct
 - 🖥 Did everyone:
     - install python
@@ -10,18 +10,20 @@
     - download the materials
 - 🙋 Getting help (🆘 red  ✅ green stickers)
 
-## Icebreaker - 5'
-A short icebreaker from [resources document](https://tud365.sharepoint.com/:w:/r/sites/ResearchDataServices/Gedeelde%20documenten/Training/Research_Software_Training/lesson_plans/resources/resources.docx?d=waea671d7fc6a46d5b5c068fc19f41940&csf=1&web=1&e=f2QYgy)
+## 9:25 - Icebreaker - 5' - CATA
+Find someone whose name starts with the last letter of your name: CATALINA -> ANDREA
 
+Ask them: what is your favorite movie from childhood and what is it now?
+ 
 
-## Introduction to python - 10'
+## 9:30 - Introduction to python - 10' - CATA
 - 🎦 introduction with [slides](https://tud365.sharepoint.com/:p:/r/sites/ResearchDataServices/Gedeelde%20documenten/Training/Research_Software_Training/lesson_plans/resources/Introduction%20to%20programming%20with%20Python.pptx?d=w0d581778c4b0479ab36e1e1706535b88&csf=1&web=1&e=gdimt4) 
 - Why python?
 - Why avoid generative AI during the workshop
 - Explain the scenario
 - Explain the CSV data
 
-## Start Jupyter notebook - 10'
+## 9:30 - Start Jupyter notebook - 10' - CATA
 - Open terminal:
     - Mac open Terminal
     - Windows open Miniforge prompt
@@ -29,16 +31,9 @@ A short icebreaker from [resources document](https://tud365.sharepoint.com/:w:/r
 ```
 conda activate carpentries
 ```
-- Navigate to Desktop
+- Navigate to `swc-python` (where ever this may be)
 ```
-cd ~/Desktop
-```
-- Users of Windows 10 will probably save the data in `OneDrive` Desktop.  
-    `"/c/Users/[username]/OneDrive\ -\ Delft\ University\ of\ Technology\Desktop"`
-
-- Navigate to `data` directory (inside `swc-python` inside)
-```
-cd swc-python/data
+cd ~/Desktop/swc-python
 ```
 - Explain jupyter notebook will run in the current working directory
 - Launch jupyter notebook
@@ -46,11 +41,10 @@ cd swc-python/data
 jupyter notebook
 ```
 
-
 - Start a new jupyter notebook using Python 3
 - Rename to `one` and save (not `day_one` to avoid confusion with directory name `data`)
 
-## Python Fundamentals - 20'
+## 9:45 - Python Fundamentals - 15' - CATA
 
 
 ### Variables
@@ -95,15 +89,15 @@ print(patient_id, 'weight in kilograms:', weight_kg) # multiple things at once
 help(print)         # shows docstring with parameters and usage
 ```
 
-### 💪  Challenge - 10'
+## 10:00 - 💪  Challenge - 10' - CATA
 - Open `exercises_day_one` notebook from jupyter home
     - 1 ❓ Check your understanding
     - 2 ❓ Sorting out references
 
-## Break - 15'
+## 10:10 - Break - 15'
 
 
-## Lists - 20'
+## 10:25 - Lists - 20' - HALFORD
 `lists` ordered collection of elements
 ```python
 odds = [1, 3, 5, 7]                 # use square brackets separate with commas
@@ -169,11 +163,11 @@ chromo[2:5]
 chromo[-1]
 
 ```
-### 💪  Challenge - 15'
+## 10:45 - 💪  Challenge - 15' - HALFORD
     - 3 ❓ Slicing from the end
     - 4 ❓ Non-continuous slices
 
-## More Lists - 15'
+## 11:00 - More Lists - 15' - HALFORD
 🎦 Use [slides](https://tud365.sharepoint.com/:p:/r/sites/ResearchDataServices/Gedeelde%20documenten/Training/Research_Software_Training/lesson_plans/resources/Introduction%20to%20programming%20with%20Python.pptx?d=w0d581778c4b0479ab36e1e1706535b88&csf=1&web=1&e=gdimt4) to explain `nested lists`
 
 ```python
@@ -199,12 +193,13 @@ till_summer = months[3:]        # omit last index
 print(till_summer)
 ```
 
-
-### 💪  Challenge - 10'
+## 11:15 - 💪  Challenge - 10' - HALFORD
 - 5 ❓ Overloading
 
 
-## Loops - 20'
+## 11:25 - Break - 15'
+
+## 11:40 - Loops - 20' - CATA
 why `loops` -> repeated actions on long lists
 ```python
 odds = [1, 3, 5, 7]         # list with ordered elements
@@ -257,18 +252,16 @@ print(len(names))
 print(len(odds))
 ```
 
-### 💪  Challenge - 30'
+## 12:00 - 💪  Challenge - 30' - CATA
 
 - 6 ❓ From 1 to N
 - 7 ❓ Understanding the loops
 - 8 ❓ Summing a list
 - 9 ❓ Computing the Value of a polynomial
 
-## Break - 60'
+## 12:30 - Break - 60'
 
-## Analyzing Patient Data
-
-### Loading data - 10'
+## 13:30 - Loading data - 10' - HALFORD
 - Importing a library is like getting a piece of lab equipment
 - Only import what you need so it doesn't get messy
 - Use shortcut to `import numpy`
@@ -292,8 +285,7 @@ print('middle value in data:', data[29, 19]) #row 30, column 20.
 
 ```
 
-
-### Slicing data - 10'
+## 13:40 - Slicing data - 10' - HALFORD
 Reiterate the use of square brackets
 ```python
 print(data[0:4, 0:10])          # select a section using :
@@ -304,11 +296,11 @@ print(data[5:10, 0:10])         # start the slice where ever you want
 print(data[:3, 36:])            # no lower bound starts at zero, no upper bound goes to end 
 ```
 
-### 💪  Challenge - 10'
+## 13:50 - 💪  Challenge - 10'- HALFORD
 - 10 ❓ Slicing strings
 
 
-### Analyzing data - 10'
+## 14:00 - Analyzing data - 10' - HALFORD
 Default functions from `np`
 ```python
 print(np.mean(data))         # mean is a function. data is the argument
@@ -322,7 +314,7 @@ print('standard deviation',stdval)
 ```
 Demo `numpy`. **TAB** to visualize the functions available from the library
 
-### Numpy axes - 10'
+## 14:10 - Numpy axes - 10' - HALFORD
 ```python
 patient_0 = data[0, :] # 0 on the first axis (rows), everything on the second (columns)
 print('maximum inflammation for patient 0:', np.max(patient_0))
@@ -342,12 +334,12 @@ print(np.max(data, axis=0).shape) # 40 days
 print(np.mean(data, axis=1)) # mean inflammation for all patients at once
 ```
 
-### 💪  Challenge - 10'
+## 14:20 - 💪  Challenge - 10' - HALFORD
 - 11 ❓ Change in inflammation
 
-## Break - 15'
+## 14:30 - Break - 15'
 
-## Visualizing Tabular Data - 15'
+## 14:45 - Visualizing Tabular Data - 15' - CATA
 Use shortcut to `import matplotlib`
 ```python
 import matplotlib.pyplot as plt # another handy library using short-cut
@@ -364,7 +356,7 @@ plt.plot(np.min(data, axis=0))         # step function seems unlikely
 ```
 Max and min look suspicious. This requires further investigation 😶
 
-## Grouping plots - 15'
+## 15:00 - Grouping plots - 15' - CATA
 - `figure` creates a space (like a blank canvas) where to place our plots
 - `add_subplot` takes 3 parameters: rows, columns, which subplot
 - `set_ylabel` to name the axis
@@ -389,14 +381,15 @@ plt.savefig('inflammation.png')
 
 ```
 
-### 💪  Challenge - 20'
+## 15:15 - 💪  Challenge - 20' - CATA
 - 12 ❓ Plot scaling
 - 13 ❓ Drawing straight lines
 - 14 ❓ Make your own plot
 - 15 ❓ Moving plots around
 
-## Break - 15'
-## Analysing multiple files - 15'
+## 15:35 - Break - 15'
+
+## 15:50 - Analysing multiple files - 15' - HALFORD
 `glob` a library to get a list of all files in a directory
 
 ```python
@@ -439,16 +432,16 @@ data = np.loadtxt(fname='data/inflammation-03.csv',delimiter=',')
 plt.imshow(data)
 ```
 Notice zero values spread across patients and days. Potential problem with data collection❗
-### 💪  Challenge - 20'
+## 16:10 - 💪  Challenge - 20' - HALFORD
 
 - 16 ❓ Plotting Differences
 - 17 ❓ Generate Composite Statistics
 
-## Forgive the imaginary Dr. Maverick -5'
+## 16:30 - Forgive the imaginary Dr. Maverick - 5' - HALFORD
 🎦 Use [slides](https://tud365.sharepoint.com/:p:/r/sites/ResearchDataServices/Gedeelde%20documenten/Training/Research_Software_Training/lesson_plans/resources/Introduction%20to%20programming%20with%20Python.pptx?d=w0d581778c4b0479ab36e1e1706535b88&csf=1&web=1&e=gdimt4) 
 
 
-## Key points - 10'
+## 16:35 - Key points - 10' - HALFORD
 ```python
 variables = 3 # variable to store values
 i = 10
@@ -491,21 +484,17 @@ glob.glob('data/inflammation*.csv')
 
 
 # 🌞 DAY 2 🌞
-## Land - 10'
+## 9:00 - Land - 10' - HALFORD
 ☕ Coffee/tea 🫖
 
-## Installation check, housekeeping - 15'
+## 9:10 - Housekeeping - 15' - HALFORD
 - ✅ Roll call + 🤝 Code of Conduct
 - 🖥 Restart Jupyter notebook
     - Restart Jupyter notebook
     - Make a new notebook with Python 3 kernel
     - Rename to `two` and save
-- 🙋 Getting help (🆘 red  ✅ green stickers)
 
-## Icebreaker - 5'
-A short icebreaker from [resources document](https://tud365.sharepoint.com/:w:/r/sites/ResearchDataServices/Gedeelde%20documenten/Training/Research_Software_Training/lesson_plans/resources/resources.docx?d=waea671d7fc6a46d5b5c068fc19f41940&csf=1&web=1&e=f2QYgy)
-
-## Recap from day one - 10'
+## 9:20 - Recap from day one - 10' - HALFORD
 
 ```python
 variables = 3 # variable to store values
@@ -547,7 +536,7 @@ import glob
 glob.glob('data/inflammation*.csv')
 ```
 
-## Making choices - 20'
+## 9:30 - Making choices - 20' - HALFORD
 Make a choice with `if`
 ```python
 num = 37
@@ -633,14 +622,14 @@ else:
     print('Seems OK!')                                    # all good
 ```
 
-### 💪  Challenge - 15'
+## 9:50 - 💪  Challenge - 15' - HALFORD
 - Open `exercises_day_two` notebook from jupyter home
     - 1 ❓ What Is Truth?
     - 2 ❓ Close Enough
     - 3 ❓ Sorting a List Into Buckets
 
-## Break - 15'
-## Creating functions - 20'
+## 10:05 - Break - 15'
+## 10:20 - Creating functions - 20' - CATA
 use python for calculations using variables
 ```python
 fahrenheit_val = 99
@@ -778,11 +767,11 @@ for filename in filenames[:3]:
     detect_problems(filename)
 ```
 
-### 💪  Challenge - 10'
+## 10:40 - 💪  Challenge - 10' - CATA
 - 4 ❓ Combining Strings
 - 5 ❓ Selecting Characters From Strings
 
-## Creating functions - cont - 20'
+## 10:50 - Creating functions - cont - 20' - CATA
 How do I know the function works as intended? We use `tests`. Example:
 
 ```python
@@ -919,13 +908,14 @@ def std_dev(sample):
 
 ```
 
-### 💪  Challenge - 10'
+## 11:10 - 💪  Challenge - 10' - CATA
 - 6 ❓ Rescaling an Array
 - 7 ❓ Defining Defaults
 - 8 ❓ Testing and Documenting Your Function
 
-## Break - 15'
-## Errors and exceptions - 10'
+## 11:20 - Break - 15' - CATA
+
+## 11:35 - Errors and exceptions - 10' - HALFORD
 Errors are inevitable. We can learn to understand them so they become easier to fix.
 
 A `traceback` is how python displays errors.
@@ -946,10 +936,10 @@ Last level is where the error actually occurred -> `print(ice_creams[3])`
 
 Python tells us the type of error: `IndexError: list index out of range`.
 
-### 💪  Challenge - 10'
+## 11:45 - 💪  Challenge - 10' - HALFORD
 - 9 ❓ Reading Error Messages
 
-## Errors and exceptions - cont - 15'
+## 11:55 - Errors and exceptions - cont - 15' - HALFORD
 Most common types of errors.
 
 `Syntax Errors` are like a typing error. Missing colon, indentation, parenthesis.
@@ -1004,14 +994,14 @@ file_handle = open('myfile.txt', 'r')       # file does not exist
 ```
 often caused by incorrect path or that filename has a typo.
 
-### 💪  Challenge - 15'
+## 12:10 - 💪  Challenge - 15' - HALFORD
 - 10 ❓ Identifying Syntax Errors
 - 11 ❓ Identifying Variable Name Errors
 - 12 ❓ Identifying Index Errors
 
-## Break - 60'
+## 12:25 - Break - 60'
 
-## Defensive Programming - 15'
+## 13:25 - Defensive Programming - 15' - CATA
 How can I make my programs `correct`?
 Define what correct means and write tests that check this correctness.
 
@@ -1066,10 +1056,10 @@ upper_y = y1 - y0       # show how to see line number in jupyter
 - fail early, fail often. 
 - turn bugs into assertions
 
-### 💪  Challenge - 10'
+## 13:40 - 💪  Challenge - 10' - CATA
 - 13 ❓ Pre- and Post-Conditions
 
-## Defensive programming - cont - 20'
+## 13:50 - Defensive programming - cont - 20' - CATA
 With `asserts` we check specific points of the code. Next step is to check the overall behaviour of the code.
 
 What we did so far was to write the function first and test it after. 
@@ -1130,26 +1120,26 @@ We are initialising the  `max_left = 0` and `min_right = 1`. This violates an im
 
 Our function is not working as expected. So for now we will leave it behind and practice assertions in a different way.
 
-**NOTE** I don't like that we don't finish a working version of `range_overlap` but I think fixing it requires too much logic for this introductory course.
-
-
-### 💪  Challenge - 10'
+## 14:10 - 💪  Challenge - 10' - CATA
 - 14 ❓ Testing Assertions
 
-## Break - 15'
-## Debugging - 15'
+## 14:20 - Break - 15'
+
+## 14:35 - Debugging - 15' - HALFORD
 🎦 use [slides](https://tud365.sharepoint.com/:p:/r/sites/ResearchDataServices/Gedeelde%20documenten/Training/Research_Software_Training/lesson_plans/resources/Introduction%20to%20programming%20with%20Python.pptx?d=w0d581778c4b0479ab36e1e1706535b88&csf=1&web=1&e=gdimt4) 
 
 
-### 💪  Challenge - 40'
+## 14:50 💪  Challenge - 40' - HALFORD
 - 15 ❓ Minimum Failure
 - 16 ❓ Not Supposed to be the Same
 - 17 ❓ Common code errors
 
-## Putting it all together - 40'
+## 15:30 - Break - 15'
+
+## 15:45 - Putting it all together - 40' - CATA
 - 18 ❓ Putting it all together
 
-## Key points - 10'
+## 16:25 - Key points - 10' - CATA
 ```
 # making choices
 if, elif, else  
@@ -1188,5 +1178,5 @@ Is a very important skill
 
 ```
 
-## Feedback - 10'
+## 16:35 - Feedback - 10' - CATA
 * Ask participants to fill in the feedback survey
