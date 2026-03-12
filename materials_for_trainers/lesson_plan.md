@@ -1126,7 +1126,7 @@ def test_range_overlap():
 ```
 `range_overlap([ (0, 1), (5, 6) ])` fails. Let's see why. The code returns an interval. If we look closely this interval does not look right!
 
-🎦 use [slides](https://tud365.sharepoint.com/:p:/r/sites/ResearchDataServices/Gedeelde%20documenten/Training/Research_Software_Training/lesson_plans/resources/Introduction%20to%20programming%20with%20Python.pptx?d=w0d581778c4b0479ab36e1e1706535b88&csf=1&web=1&e=gdimt4) to illustrate edge case -> non overlapping ranges
+🎦 use [slides](https://tud365.sharepoint.com/:p:/r/sites/ResearchDataServices/Gedeelde%20documenten/Training/Research_Software_Training/lesson_plans/resources/Introduction%20to%20programming%20with%20Python.pptx?d=w0d581778c4b0479ab36e1e1706535b88&csf=1&web=1&e=gdimt4) to illustrate edge case -> non overlapping ranges.
 ```python
 def range_overlap(ranges):
     """Return common overlap among a set of [left, right] ranges."""
@@ -1137,11 +1137,11 @@ def range_overlap(ranges):
         rights.append(right)
     right_overlap = min(rights)
     left_overlap = max(lefts)
-    if left_overlap >= right_overlap:
+    if left_overlap >= right_overlap:   # expected interval should be left < right 
         return None
     return (left_overlap, right_overlap)
 ```
-Out last check fails. We can fix this by adding a pre condition check for empty lists. Only executing the funciton is `len(list) > 0
+Out last check fails. We can fix this by adding a pre condition check for empty lists. Only executing the function if `len(list) > 0`.
 ```python
 def range_overlap(ranges):
     """Return common overlap among a set of [left, right] ranges."""
