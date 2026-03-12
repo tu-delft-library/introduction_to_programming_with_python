@@ -93,6 +93,7 @@ help(print)         # shows docstring with parameters and usage
 - Open `exercises_day_one` notebook from jupyter home
     - 1 ❓ Check your understanding
     - 2 ❓ Sorting out references
+    - [OPTIONAL]❓ Arithmic with different types
 
 ## 10:10 - Break - 15'
 
@@ -167,6 +168,7 @@ chromo[-1]
     - 3 ❓ Slicing from the end
     - 4 ❓ Non-continuous slices
 
+
 ## 11:00 - More Lists - 15' - HALFORD
 🎦 Use [slides](https://tud365.sharepoint.com/:p:/r/sites/ResearchDataServices/Gedeelde%20documenten/Training/Research_Software_Training/lesson_plans/resources/Introduction%20to%20programming%20with%20Python.pptx?d=w0d581778c4b0479ab36e1e1706535b88&csf=1&web=1&e=gdimt4) to explain `nested lists`
 
@@ -195,7 +197,7 @@ print(till_summer)
 
 ## 11:15 - 💪  Challenge - 10' - HALFORD
 - 5 ❓ Overloading
-
+- [OPTIONAL] ❓ Split even and odd
 
 ## 11:25 - Break - 15'
 
@@ -258,6 +260,7 @@ print(len(odds))
 - 7 ❓ Understanding the loops
 - 8 ❓ Summing a list
 - 9 ❓ Computing the Value of a polynomial
+- [OPTIONAL] ❓ Factorial calculation
 
 ## 12:30 - Break - 60'
 
@@ -298,7 +301,7 @@ print(data[:3, 36:])            # no lower bound starts at zero, no upper bound 
 
 ## 13:50 - 💪  Challenge - 10'- HALFORD
 - 10 ❓ Slicing strings
-
+- [OPTIONAL] ❓ Counting vowels
 
 ## 14:00 - Analyzing data - 10' - HALFORD
 Default functions from `np`
@@ -386,6 +389,7 @@ plt.savefig('inflammation.png')
 - 13 ❓ Drawing straight lines
 - 14 ❓ Make your own plot
 - 15 ❓ Moving plots around
+- [OPTIONAL] ❓ Plotting error bars
 
 ## 15:35 - Break - 15'
 
@@ -627,6 +631,7 @@ else:
     - 1 ❓ What Is Truth?
     - 2 ❓ Close Enough
     - 3 ❓ Sorting a List Into Buckets
+    - [OPTIONAL] ❓ In-Place Operators
 
 ## 10:05 - Break - 15'
 ## 10:20 - Creating functions - 20' - CATA
@@ -912,6 +917,7 @@ def std_dev(sample):
 - 6 ❓ Rescaling an Array
 - 7 ❓ Defining Defaults
 - 8 ❓ Testing and Documenting Your Function
+- [OPTIONAL] ❓ Mixing Default and Non-Default 
 
 ## 11:20 - Break - 15' - CATA
 
