@@ -1105,26 +1105,60 @@ assert range_overlap([ (0, 1), (1, 2) ]) == None
 ```python
 def range_overlap(ranges):
     """Return common overlap among a set of [left, right] ranges."""
-    max_left = 0
-    min_right = 1
+    lefts = []
+    rights = []
     for (left, right) in ranges:
-        max_left = max(max_left, left)
-        min_right = min(min_right, right)
-    return (max_left, min_right)
+        lefts.append(left)
+        rights.append(right)
+    right_overlap = min(rights)
+    left_overlap = max(lefts)
+    return (left_overlap, right_overlap)
 ```
 Let's run the tests
 ```python
 def test_range_overlap():
-    assert range_overlap([ (0, 1), (5, 6) ]) == None
-    assert range_overlap([ (0, 1), (1, 2) ]) == None
     assert range_overlap([ (0, 1) ]) == (0, 1)
     assert range_overlap([ (2, 3), (2, 4) ]) == (2, 3)
     assert range_overlap([ (0, 1), (0, 2), (-1, 1) ]) == (0, 1)
+    assert range_overlap([ (0, 1), (5, 6) ]) == None
+    assert range_overlap([ (0, 1), (1, 2) ]) == None
     assert range_overlap([ ]) == None
 ```
-We are initialising the  `max_left = 0` and `min_right = 1`. This violates an important rule: `always initialize from data`.
+`range_overlap([ (0, 1), (5, 6) ])` fails. Let's see why. The code returns an interval. If we look closely this interval does not look right!
 
-Our function is not working as expected. So for now we will leave it behind and practice assertions in a different way.
+🎦 use [slides](https://tud365.sharepoint.com/:p:/r/sites/ResearchDataServices/Gedeelde%20documenten/Training/Research_Software_Training/lesson_plans/resources/Introduction%20to%20programming%20with%20Python.pptx?d=w0d581778c4b0479ab36e1e1706535b88&csf=1&web=1&e=gdimt4) to illustrate edge case -> non overlapping ranges
+```python
+def range_overlap(ranges):
+    """Return common overlap among a set of [left, right] ranges."""
+    lefts = []
+    rights = []
+    for (left, right) in ranges:
+        lefts.append(left)
+        rights.append(right)
+    right_overlap = min(rights)
+    left_overlap = max(lefts)
+    if left_overlap >= right_overlap:
+        return None
+    return (left_overlap, right_overlap)
+```
+Out last check fails. We can fix this by adding a pre condition check for empty lists. Only executing the funciton is `len(list) > 0
+```python
+def range_overlap(ranges):
+    """Return common overlap among a set of [left, right] ranges."""
+    if len(ranges) > 0:
+        lefts = []
+        rights = []
+        for (left, right) in ranges:
+            lefts.append(left)
+            rights.append(right)
+        right_overlap = min(rights)
+        left_overlap = max(lefts)
+        if left_overlap >= right_overlap:
+            return None
+        return (left_overlap, right_overlap)
+```
+Voila!
+
 
 ## 14:10 - 💪  Challenge - 10' - CATA
 - 14 ❓ Testing Assertions
