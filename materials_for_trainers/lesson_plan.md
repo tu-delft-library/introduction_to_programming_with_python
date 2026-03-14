@@ -27,7 +27,7 @@ Ask them: what is your favorite movie from childhood and what is it now?
 - Open terminal:
     - Mac open Terminal
     - Windows open Miniforge prompt
-- Activate `carpentries` conda environment
+- **Activate `carpentries` conda environment**
 ```
 conda activate carpentries
 ```
@@ -234,7 +234,7 @@ Another example that updates a variable insideo a loop.
 # how many elemtns are there in the list.
 length = 0
 names = ['Curie', 'Darwin', 'Turing']
-for value in names:
+for name in names:
     length = length + 1            
 print('There are', length, 'names in the list.')
 ```
@@ -350,8 +350,14 @@ print(np.mean(data, axis=1)) # mean inflammation for all patients at once
 ## 14:45 - Visualizing Tabular Data - 15' - CATA
 Use shortcut to `import matplotlib`
 ```python
+##### if needed reload data
+import numpy as np          # numerical python. Good for matrices operations
+np.loadtxt(fname='data/inflammation-01.csv') # without delimiter to explain delimiter
+data = np.loadtxt(fname='data/inflammation-01.csv', delimiter=','). # explain function call, . notation and parameters
+##### if needed reload data
+
 import matplotlib.pyplot as plt # another handy library using short-cut
-image = plt.imshow(data) # heatmap: low values are blue, high values are yellow     
+plt.imshow(data) # heatmap: low values are blue, high values are yellow     
 ```
 Quickly observe tendency of inflammation flare-ups around day 20 🔥
 
@@ -362,7 +368,9 @@ plt.plot(np.mean(data, axis=0))       # avg inflammation per day. Reasonable ris
 plt.plot(np.max(data, axis=0))         # linear seems unlikely
 plt.plot(np.min(data, axis=0))         # step function seems unlikely
 ```
-Max and min look suspicious. This requires further investigation 😶
+Max and min look suspicious. This requires further investigation 😶.
+
+BUT FIRST, let's learn how to visualize these 3 plots in one line, so that we can conitnue our data investigation.
 
 ## 15:00 - Grouping plots - 15' - CATA
 - `figure` creates a space (like a blank canvas) where to place our plots
