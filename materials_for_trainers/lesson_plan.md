@@ -41,8 +41,8 @@ cd ~/Desktop/swc-python
 jupyter notebook
 ```
 
-- Start a new jupyter notebook using Python 3
-- Rename to `one` and save (not `day_one` to avoid confusion with directory name `data`)
+- Demo how to start a new jupyter notebook using Python 3
+- Open `python_one` to do the live coding. This one will be used for command log
 
 ## 9:45 - Python Fundamentals - 15' - CATA
 
