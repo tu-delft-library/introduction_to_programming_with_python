@@ -229,8 +229,9 @@ for banana in odds:
 for odd in odds:        # another standard -> singular of the list name
     print(odd)
 ```
-Another example.
+Another example that updates a variable insideo a loop.
 ```python
+# how many elemtns are there in the list.
 length = 0
 names = ['Curie', 'Darwin', 'Turing']
 for value in names:
