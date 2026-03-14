@@ -57,7 +57,11 @@ A variable is a `name for a value`
 * May include letters, digits and underscores
 * May not start with a digit
 * are _case sensitive_
-
+```
+weight0 # is valid
+0weight # is not valid
+weight != Weight
+``
 ### Types of data
 Three most common types:
 * integer numbers
