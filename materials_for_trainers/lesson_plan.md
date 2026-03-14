@@ -370,7 +370,7 @@ plt.plot(np.min(data, axis=0))         # step function seems unlikely
 ```
 Max and min look suspicious. This requires further investigation 😶.
 
-BUT FIRST, let's learn how to visualize these 3 plots in one line, so that we can conitnue our data investigation.
+BUT FIRST, let's learn how to visualize these 3 plots in one line, so that we can continue our data investigation.
 
 ## 15:00 - Grouping plots - 15' - CATA
 - `figure` creates a space (like a blank canvas) where to place our plots
@@ -434,10 +434,10 @@ for filename in filenames[0:3]:
     axes1.plot(numpy.mean(data, axis=0)) # along rows = patients -> values per day
 
     axes2.set_ylabel('max')
-    axes2.plot(numpy.amax(data, axis=0)) # along rows = patients -> values per day
+    axes2.plot(numpy.amax(data, axis=0))
 
     axes3.set_ylabel('min')
-    axes3.plot(numpy.amin(data, axis=0)) # along rows = patients -> values per day
+    axes3.plot(numpy.amin(data, axis=0))
 
     plt.show()            # so that it renders after printing the filename
 ```
@@ -651,57 +651,57 @@ else:
 use python for calculations using variables
 ```python
 fahrenheit_val = 99
-celsius_val = ((fahrenheit_val - 32) * (5/9)) # convert temperature F to C
+celsius_val = (fahrenheit_val - 32) * (5/9) # convert temperature F to C
 
 fahrenheit_val2 = 43                        # copy the line and rename the variables
-celsius_val2 = ((fahrenheit_val2 - 32) * (5/9))
+celsius_val2 = (fahrenheit_val2 - 32) * (5/9)
 
 ```
 if repeat for many variables -> long, clumsy and ugly 😕
 
 short way to reuse code -> `function`
 ```python
-def explicit_fahr_to_celsius(temp):
+def explicit_fahrenheit_to_celsius(temperature):
     # Assign the converted value to a variable
-    converted = ((temp - 32) * (5/9))
+    converted = (temperature - 32) * (5/9)
     # Return the value of the new variable
     return converted
     
-def fahr_to_celsius(temp):
+def fahrenheit_to_celsius(temperature):
     # Return converted value more efficiently using the return
     # function without creating a new variable. This code does
     # the same thing as the previous function but it is more explicit
     # in explaining how the return command works.
-    return ((temp - 32) * (5/9))
+    return ((temperature - 32) * (5/9))
 ```
 - `def` function definition
-- `fahr_to_celsius` function name
-- `(temp)` parenthesized list of parameter
+- `fahrenheit_to_celsius` function name
+- `(temperature)` parenthesized list of parameter
 - `body` defined by indention (same as `loops`)
 - `return` ends body followed by return value
 
 ```python
-fahr_to_celsius(32)     # 32 assigned to `temp`
+fahrenheit_to_celsius(32)     # 32 assigned to `temp`
                         # returns the converted valued
-print('freezing point of water:', fahr_to_celsius(32), 'C')
-print('boiling point of water:', fahr_to_celsius(212), 'C')
+print('freezing point of water:', fahrenheit_to_celsius(32), 'C')
+print('boiling point of water:', fahrenheit_to_celsius(212), 'C')
 ```
 Another function to convert C to K
 ```python
-def celsius_to_kelvin(temp_c):
-    return temp_c + 273.15
+def celsius_to_kelvin(temperature_c):
+    return temperature_c + 273.15
 
 print('freezing point of water in Kelvin:', celsius_to_kelvin(0.))
 ```
 Call a function inside a function -> composing functions
 ```python
 # compose functions
-def fahr_to_kelvin(temp_f):
-    temp_c = fahr_to_celsius(temp_f)
-    temp_k = celsius_to_kelvin(temp_c)
-    return temp_k
+def fahrenheit_to_kelvin(temperature_f):
+    temperature_c = fahrenheit_to_celsius(temperature_f)
+    temperature_k = celsius_to_kelvin(temperature_c)
+    return temperature_k
 
-print('boiling point of water in Kelvin:', fahr_to_kelvin(212.0))
+print('boiling point of water in Kelvin:', fahrenheit_to_kelvin(212.0))
 
 ```
 This is how large programs are built.
@@ -709,16 +709,16 @@ This is how large programs are built.
 The variables inside a function are called `local variables`
 
 ```python
-print('Again, temperature in Kelvin was:', temp_k) # temp_k does not exist after execution
-temp_kelvin = fahr_to_kelvin(212.0)     # store return value of function in variable
-print('temperature in Kelvin was:', temp_kelvin)
+print('Again, temperature in Kelvin was:', temperature_k) # temperature_k does not exist after execution
+temperature_kelvin = fahrenheit_to_kelvin(212.0)     # store return value of function in variable
+print('temperature in Kelvin was:', temperature_kelvin)
 
 def print_temperatures():
-    print('temperature in Fahrenheit was:', temp_fahr)
-    print('temperature in Kelvin was:', temp_kelvin)
+    print('temperature in Fahrenheit was:', temperature_fahr)
+    print('temperature in Kelvin was:', temperature_kelvin)
 
-temp_fahr = 212.0                       # variable outside function is global
-temp_kelvin = fahr_to_kelvin(temp_fahr)
+temperature_fahr = 212.0                       # variable outside function is global
+temperature_kelvin = fahrenheit_to_kelvin(temperature_fahr)
 
 print_temperatures()
 ``` 
