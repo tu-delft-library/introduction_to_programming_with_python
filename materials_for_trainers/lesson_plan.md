@@ -661,13 +661,13 @@ if repeat for many variables -> long, clumsy and ugly 😕
 
 short way to reuse code -> `function`
 ```python
-def explicit_fahrenheit_to_celsius(temperature):
+def fahrenheit_to_celsius(temperature):
     # Assign the converted value to a variable
     converted = (temperature - 32) * (5/9)
     # Return the value of the new variable
     return converted
     
-def fahrenheit_to_celsius(temperature):
+def fahrenheit_to_celsius_efficient(temperature):
     # Return converted value more efficiently using the return
     # function without creating a new variable. This code does
     # the same thing as the previous function but it is more explicit
@@ -721,7 +721,11 @@ temperature_fahr = 212.0                       # variable outside function is gl
 temperature_kelvin = fahrenheit_to_kelvin(temperature_fahr)
 
 print_temperatures()
+
 ``` 
+**NOTE** 
+NOT RECOMMENDED to use global variables -> prone to unexpected behavior. Better to pass the variables needed as arguments
+
 **NOTE** `print` and `return` don't have the same behavior.
 - `print` makes data visible on the screen for us humans to read
 - `return` makes data visible to the program
@@ -766,8 +770,8 @@ def visualize(filename): #use a descriptive name for function
 def detect_problems(filename): 
 
     data = np.loadtxt(fname=filename, delimiter=',')
-
-    if np.amax(data, axis=0)[0] == 0 and np.amax(data, axis=0)[20] == 20:
+    maximmum_per_day = np.max(data, axis=0)
+    if maximmum_per_day[0] == 0 and maximmum_per_day[20] == 20:
         print('Suspicious looking maxima!')
     elif np.sum(np.amin(data, axis=0)) == 0:
         print('Minima add up to zero!')
