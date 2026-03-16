@@ -1,4 +1,5 @@
 **/*.ipynb_checkpoints
-.gitignore
 **/.DS_Store
 **/*.png
+**/.vscode/
+
